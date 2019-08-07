@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Calendário de pagamentos FGTS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+
+
+
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
+
+         body {
+            font-family: 'Nunito', sans-serif;
+        }
+
+
+        header {
+            color: #fff;
+            background-color: #277eb6;
+            width: 100%;
+            text-align: center;
+            overflow: auto;
+        }
+
+
+        header h1 {
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+        header p {
+            font-size: 0.9rem;
+        }
+
+        main {
+            
+            margin: 0px auto;
+            padding: 1rem;
+        }
+
+        .label {
+            width: 100%;
+            display: block;
+            color: gray;
+            margin-bottom: 0.5rem;
+           
+        }
+
+        .label-for-radiobutton {
+           margin-right: 1rem;           
+        }
+
+        select {
+            padding: 0.5rem;
+            width: 100%;
+
+        }
+
+        fieldset{
+            border: 0;
+        }
+
+        input[type=radio]{
+            margin-right: 5px;
+        }
+    </style>
+
+    <header>
+        <h1>Calendário de Saques do FGTS</h1>
+        <p>Informe os dados abaixo e confira quando e quanto você poderá sacar.</p>
+    </header>
+
+    <main>
+
+
+
+        <section>
+            <fieldset>
+                <label class="label" for="ddlMonths">Mês de Nascimento</label>
+                <select name="ddlMonths" id="ddlMonths">
+                    <option value="1">Janeiro</option>
+                    <option value="1">Fevereiro</option>
+                    <option value="1">Março</option>
+                    <option value="1">Abril</option>
+                    <option value="1">Maio</option>
+                    <option value="1">Junho</option>
+                    <option value="1">Julho</option>
+                    <option value="1">Agosto</option>
+                    <option value="1">Setembro</option>
+                    <option value="1">Outubro</option>
+                    <option value="1">Novembro</option>
+                    <option value="1">Dezembro</option>
+                </select>
+            </fieldset>
+
+
+            <fieldset>
+
+                <label class="label" for="HasAccount">Possui conta na Caixa Econômica Federal?</label>
+                <input type="radio" name="HasAccount" id="HasAccountYes"><label for = "HasAccountYes" class="label-for-radiobutton">Sim</label>
+                <input type="radio" name="HasAccount" id="HasAccountNo"><label for = "HasAccountNo" class="label-for-radiobutton">Não</label>
+
+            </fieldset>
+
+        </section>
+
+        <section id="nonCustumers">   
+            <div class="card">
+                <h2>13 de Setembro de 2019</h2>
+                <p>Onde</p>
+                
+            </div>
+        </section>        
+
+        <section id="withdrawSchedule">
+
+            <div class="card" id="poupanca_range1">
+                <ul>
+                    <li>Quando: </li>
+                    <li>Onde</li>
+                    <li>Horário</li>
+
+                </ul>
+            </div>
+
+        </section>
+
+
+        <script>
+
+            function ShowWithdrawSchedule() {
+
+
+
+            }
+
+
+        </script>
+
+        <style>
+        </style>
+
+    </main>
+</body>
+
+</html>
