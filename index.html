@@ -172,6 +172,13 @@
             margin-bottom: 0.5rem;
 
         }
+
+        .fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+} 
     </style>
 
     <header>
@@ -209,53 +216,42 @@
 
                 <fieldset>
 
-                    <label class="label" for="HasAccount">Qual seu relacionamento com a Caixa Econômica Federal?</label>
+                    <label class="label" for="HasAccount">Você tem uma conta-poupança na Caixa Econômica Federal?</label>
 
                     <div class="radiobutton">
 
                         <input type="radio" name="HasSavingAccountYes" id="HasSavingAccountYes" value="0"
                             v-model="hasSavingAccount" v-on:change="ddlMonths_onchange" /><label
-                            for="HasSavingAccountYes" class="label-for-radiobutton">Tenho
-                            uma
-                            conta poupança</label>
+                            for="HasSavingAccountYes" class="label-for-radiobutton">Sim, eu tenho</label>
 
                     </div>
 
                     <div class="radiobutton"> <input type="radio" name="HasAccount" id="HasSavingAccountNo" value="1"
                             v-model="hasSavingAccount" v-on:change="ddlMonths_onchange" /><label
-                            for="HasSavingAccountNo" class="label-for-radiobutton">Tenho
-                            uma
-                            conta corrente</label> </div>
-                    <div class="radiobutton">
-                        <input type="radio" name="HasAccount" id="HasAccountNo" value="2" v-model="hasSavingAccount"
-                            v-on:change="ddlMonths_onchange" /><label for="HasAccountNo"
-                            class="label-for-radiobutton">Não
-                            tenho
-                            conta</label>
-                    </div>
-
-
-
+                            for="HasSavingAccountNo" class="label-for-radiobutton">Não tenho</label> </div>
                 </fieldset>
 
             </section>
+            <transition name="fade">
 
-            <section id="withdrawSchedule" v-if="hasSavingAccount>=0">
+          
+                <section id="withdrawSchedule" v-if="hasSavingAccount>=0">
 
-                <div class="card" id="poupanca" v->
-                    <img src="/img/calendar.png" alt="Quando" style="width:32px;height:32px" />
-                    <h2>Quando sacar</h2>
-                    <p>{{ availableDate }}</p>
-                    <img src="/img/money.png" alt="Quanto" style="width:32px;height:32px" />
-                    <h2>Quanto tenho direito</h2>
-                    <p>O valor depende dos saldos das suas contas FGTS. O valor máximo é de R$500,00 por conta.</p>
-                    <img src="/img/atm.png" alt="Como sacar" style="width:32px;height:32px" />
-                    <h2>Como sacar</h2>
-                    <p>{{ howTo }}
-                    </p>
-                </div>
+                    <div class="card" id="poupanca" v->
+                        <img src="/img/calendar.png" alt="Quando" style="width:32px;height:32px" />
+                        <h2>Quando sacar</h2>
+                        <p>{{ availableDate }}</p>
+                        <img src="/img/money.png" alt="Quanto" style="width:32px;height:32px" />
+                        <h2>Quanto tenho direito</h2>
+                        <p>O valor depende dos saldos das suas contas FGTS. O valor máximo é de R$500,00 por conta.</p>
+                        <img src="/img/atm.png" alt="Como sacar" style="width:32px;height:32px" />
+                        <h2>Como sacar</h2>
+                        <p>{{ howTo }}
+                        </p>
+                    </div>
 
-            </section>
+                </section>
+            </transition>
         </div>
     </main>
     <script>
