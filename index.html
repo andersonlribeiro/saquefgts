@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 
     <style>
         body,
@@ -50,38 +50,42 @@
             padding: 1rem;
         }
 
-        @media screen and (min-width: 768px) and (max-width: 1024px){
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
             main {
                 margin: 0px auto;
                 padding: 1rem;
             }
         }
+
         /* Tablets, iPads (portrait) ---------- */
-        @media screen and (min-width: 768px){
+        @media screen and (min-width: 768px) {
             main {
                 margin: 0px auto;
                 padding: 1rem;
                 max-width: 70%;
             }
         }
+
         /* Tablets, iPads (landscape) ---------- */
-        @media screen and (min-width: 1024px){
+        @media screen and (min-width: 1024px) {
             main {
                 margin: 0px auto;
                 padding: 1rem;
                 max-width: 70%;
             }
         }
+
         /* Desktops and laptops ---------- */
-        @media screen and (min-width: 1224px){
+        @media screen and (min-width: 1224px) {
             main {
                 margin: 0px auto;
                 padding: 1rem;
                 max-width: 70%;
             }
         }
+
         /* Large screens ---------- */
-        @media screen and (min-width: 1824px){
+        @media screen and (min-width: 1824px) {
             main {
                 margin: 0px auto;
                 padding: 1rem;
@@ -99,7 +103,7 @@
 
         .label-for-radiobutton {
             margin-right: 1rem;
-            
+
         }
 
         select {
@@ -148,10 +152,8 @@
 
         .radiobutton {
             margin-bottom: 0.5rem;
-            
-        }
 
-        
+        }
     </style>
 
     <header>
@@ -194,19 +196,22 @@
                     <div class="radiobutton">
 
                         <input type="radio" name="HasSavingAccountYes" id="HasSavingAccountYes" value="0"
-                            v-model="hasSavingAccount" v-on:change="ddlMonths_onchange"/><label for="HasSavingAccountYes" class="label-for-radiobutton">Tenho
+                            v-model="hasSavingAccount" v-on:change="ddlMonths_onchange" /><label
+                            for="HasSavingAccountYes" class="label-for-radiobutton">Tenho
                             uma
                             conta poupança</label>
 
                     </div>
 
                     <div class="radiobutton"> <input type="radio" name="HasAccount" id="HasSavingAccountNo" value="1"
-                            v-model="hasSavingAccount" v-on:change="ddlMonths_onchange"/><label for="HasSavingAccountNo" class="label-for-radiobutton">Tenho
+                            v-model="hasSavingAccount" v-on:change="ddlMonths_onchange" /><label
+                            for="HasSavingAccountNo" class="label-for-radiobutton">Tenho
                             uma
                             conta corrente</label> </div>
                     <div class="radiobutton">
-                        <input type="radio" name="HasAccount" id="HasAccountNo" value="2"
-                            v-model="hasSavingAccount" v-on:change="ddlMonths_onchange" /><label for="HasAccountNo" class="label-for-radiobutton">Não
+                        <input type="radio" name="HasAccount" id="HasAccountNo" value="2" v-model="hasSavingAccount"
+                            v-on:change="ddlMonths_onchange" /><label for="HasAccountNo"
+                            class="label-for-radiobutton">Não
                             tenho
                             conta</label>
                     </div>
@@ -243,17 +248,18 @@
                 birthMonth: 1,
                 availableDate: '13 de setembro de 2019',
                 hasSavingAccount: -1,
-                howTo:'O banco fará o depósito diretamente na sua conta-poupança. Basta sacar com seu cartão bancário.'
+                howTo: 'O banco fará o depósito diretamente na sua conta-poupança. Basta sacar com seu cartão bancário.'
 
             },
 
             methods: {
                 ddlMonths_onchange: function (event) {
-                    
-                    console.log(this.hasSavingAccount);
+
+
 
                     if (this.hasSavingAccount == 0) {
-                        this.howTo = 'O banco fará o depósito diretamente na sua conta-poupança. Basta sacar com seu cartão bancário.'
+                        this.howTo =
+                            'O banco fará o depósito diretamente na sua conta-poupança. Basta sacar com seu cartão bancário.'
                         if (this.birthMonth <= 4) {
                             this.availableDate = 'Saque disponível no dia 13 de setembro de 2019';
                         } else if (vm.birthMonth <= 8) {
@@ -262,10 +268,11 @@
                             this.availableDate = 'Saque disponível no dia 09 de outubro de 2019'
                         }
 
-                    }else{
-                        console.log(this.birthMonth);
+                    } else {
 
-                        this.howTo = `Pode sacar até R$ 100,00 nas lotéricas, apresentando somente o RG e o CPF. 
+
+                        this.howTo =
+                            `Pode sacar até R$ 100,00 nas lotéricas, apresentando somente o RG e o CPF. 
                         Com o cartão do cidadão e senha, pode sacar até R$500,00 por conta do FGTS nas lotéricas, correspondentes Caixa Aqui e 
                         nos caixas eletrônicos da Caixa. Para saques acima de R$100,00 e não tenha o cartão cidadão ou a senha, terá de ir a uma agência da Caixa para efetuar o saque.`;
                         if (this.birthMonth == 1) {
@@ -274,34 +281,26 @@
                             this.availableDate = 'a partir de 25/10/2019 até 31/3/2020'
                         } else if (vm.birthMonth == 3) {
                             this.availableDate = 'a partir de 08/11/2019 até 31/3/2020'
-                        }else if (vm.birthMonth == 4) {
+                        } else if (vm.birthMonth == 4) {
                             this.availableDate = 'a partir de 22/11/2019 até 31/3/2020'
-                        }
-                        else if (vm.birthMonth == 5) {
+                        } else if (vm.birthMonth == 5) {
                             this.availableDate = 'a partir de 06/12/2019 até 31/3/2020'
-                        }
-                        else if (vm.birthMonth == 6) {
+                        } else if (vm.birthMonth == 6) {
                             this.availableDate = 'a partir de 18/12/2019 até 31/3/2020'
-                        }
-                        else if (vm.birthMonth == 7) {
+                        } else if (vm.birthMonth == 7) {
                             this.availableDate = 'a partir de 10/01/2020 até 31/3/2020'
-                        }
-                        else if (vm.birthMonth == 8) {
+                        } else if (vm.birthMonth == 8) {
                             this.availableDate = 'a partir de 17/01/2020 até 31/3/2020'
-                        }
-                        else if (vm.birthMonth == 9) {
+                        } else if (vm.birthMonth == 9) {
                             this.availableDate = 'a partir de 24/01/2020 até 31/3/2020'
-                        }
-                        else if (vm.birthMonth == 10) {
+                        } else if (vm.birthMonth == 10) {
                             this.availableDate = 'a partir de 07/02/2020 até 31/3/2020'
-                        }
-                        else if (vm.birthMonth == 11) {
+                        } else if (vm.birthMonth == 11) {
                             this.availableDate = 'a partir de 14/02/2020 até 31/3/2020'
-                        }
-                        else if (vm.birthMonth == 12) {
+                        } else if (vm.birthMonth == 12) {
                             this.availableDate = 'a partir de 06/03/2020 até 31/3/2020'
                         }
-                        
+
 
                     }
                 }
